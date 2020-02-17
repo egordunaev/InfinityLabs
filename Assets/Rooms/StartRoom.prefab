@@ -16004,6 +16004,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2901848003752718135}
+  - component: {fileID: 1182022586224824427}
   m_Layer: 0
   m_Name: StartRoom
   m_TagString: Respawn
@@ -16031,6 +16032,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1182022586224824427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901848003752718132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15fecca9b1aa324291ff6828f9fb8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {fileID: 0}
+  endPoint: {fileID: 6159638037251426131}
 --- !u!1 &6997432858161682949
 GameObject:
   m_ObjectHideFlags: 0
