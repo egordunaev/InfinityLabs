@@ -9,7 +9,7 @@ public class LevelGenerator : MonoBehaviour
     public DefaultRoomSection[] stop; // конечные секции
     public int MaximumSections = 20; // макс. возможное число секций
     public float sectionSize = 1; // размер секции, все стороны должны быть равны
-
+    private System.Random random = new System.Random();
     private DefaultRoomSection current, previous;
     private int index;
 
@@ -26,8 +26,12 @@ public class LevelGenerator : MonoBehaviour
 
         if (previous)
         {
-            current.transform.forward = previous.endPoint.forward;
-            current.transform.position += previous.endPoint.position - current.startPoint.position;
+            var point = previous.endPoint[random.Next(0, previous.endPoint.Length)];
+            //foreach(var point in previous.endPoint)
+            //{
+                current.transform.forward = point.forward;
+                current.transform.position += point.position - current.startPoint.position;
+            //}
         }
     }
 
@@ -41,7 +45,7 @@ public class LevelGenerator : MonoBehaviour
         for (int i = 0; i < MaximumSections; i++)
         {
             index = i;
-
+            
             if (!Check())
             {
                 tmp = current;
@@ -63,9 +67,13 @@ public class LevelGenerator : MonoBehaviour
 
     private bool Check() // проверка, есть ли на пути ранее созданные секции
     {
-        Vector3 position = current.endPoint.position + current.endPoint.forward * sectionSize / 2;
-        Collider[] colliders = Physics.OverlapSphere(position, sectionSize / 4);
-        foreach (Collider hit in colliders) if (hit) return true;
+        foreach (var point in current.endPoint)
+        {
+            Vector3 position = point.position + point.forward * sectionSize / 2;
+            Collider[] colliders = Physics.OverlapSphere(position, sectionSize /4);
+            foreach (Collider hit in colliders) if (hit) return true;
+            
+        }
         return false;
     }
     // Start is called before the first frame update

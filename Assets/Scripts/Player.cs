@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultRoomSection : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    // DefaultRoomSection is temporary name for room scripts, will change later!
-    public Transform startPoint;
-    public Transform[] endPoint;
     // Start is called before the first frame update
     void Start()
     {

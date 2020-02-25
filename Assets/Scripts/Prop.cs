@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultRoomSection : MonoBehaviour
+public class Prop : MonoBehaviour
 {
-    // DefaultRoomSection is temporary name for room scripts, will change later!
-    public Transform startPoint;
-    public Transform[] endPoint;
+    public bool isPickup;
+    public string displayedName; // in case for highlighting with GUI
+    public string pickUpType;
     // Start is called before the first frame update
     void Start()
     {

@@ -15839,7 +15839,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.18422927, g: 0.5660378, b: 0.2051503, a: 1}
   m_Intensity: 47.746483
   m_Range: 11.5833645
   m_SpotAngle: 30
@@ -15883,7 +15883,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 14423
+  m_ColorTemperature: 6452
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -16005,6 +16005,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2901848003752718135}
   - component: {fileID: 1182022586224824427}
+  - component: {fileID: 5701201983207407973}
   m_Layer: 0
   m_Name: StartRoom
   m_TagString: Respawn
@@ -16029,6 +16030,7 @@ Transform:
   - {fileID: 2901848002630992821}
   - {fileID: 2901848003021163346}
   - {fileID: 6159638037251426131}
+  - {fileID: 2380608232693274152}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16039,13 +16041,69 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2901848003752718132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c15fecca9b1aa324291ff6828f9fb8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: {fileID: 0}
-  endPoint: {fileID: 6159638037251426131}
+  endPoint:
+  - {fileID: 6159638037251426131}
+--- !u!114 &5701201983207407973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901848003752718132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a86001fe301fc642a06720fd4045fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomType: 0
+  startPoint: {fileID: 2380608232693274152}
+  endPoint:
+  - {fileID: 6159638037251426131}
+  parent: {fileID: 0}
+  child: {fileID: 0}
+  possibleConnectingRooms:
+  - {fileID: 6949868347753589061, guid: 73e8026b2ef83444fb521ebcc2b87a40, type: 3}
+  - {fileID: 2513749060889219583, guid: c093eb3e009b15b47ac761f09339e330, type: 3}
+  - {fileID: 5713921677712197596, guid: 0214df62df4b4f443ab469b7c0695726, type: 3}
+  - {fileID: 629916030998504275, guid: 7cfce42201a590346a294d696c8c8cca, type: 3}
+  - {fileID: 7612214064286007266, guid: 0ed228d19ab3d7049ab26dccc8da2db9, type: 3}
+  - {fileID: 8948052611474971414, guid: 16305f1c94c23d0499b51274fbea0875, type: 3}
+--- !u!1 &3641082890484110160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2380608232693274152}
+  m_Layer: 0
+  m_Name: Start_Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2380608232693274152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641082890484110160}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2901848003752718135}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6997432858161682949
 GameObject:
   m_ObjectHideFlags: 0
