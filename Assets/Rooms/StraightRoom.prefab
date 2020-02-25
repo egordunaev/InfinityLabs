@@ -860,6 +860,7 @@ GameObject:
   - component: {fileID: 5302350855743938808}
   - component: {fileID: 5427369067550372859}
   - component: {fileID: 629916030998504275}
+  - component: {fileID: 4549910423019820340}
   m_Layer: 0
   m_Name: StraightRoom
   m_TagString: Respawn
@@ -929,6 +930,19 @@ MonoBehaviour:
   - {fileID: 629916030998504275}
   - {fileID: 7612214064286007266, guid: 0ed228d19ab3d7049ab26dccc8da2db9, type: 3}
   - {fileID: 8948052611474971414, guid: 16305f1c94c23d0499b51274fbea0875, type: 3}
+--- !u!65 &4549910423019820340
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302350855743938811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 4, z: 30}
+  m_Center: {x: 2, y: 2, z: -3}
 --- !u!1 &5302350856071896491
 GameObject:
   m_ObjectHideFlags: 0

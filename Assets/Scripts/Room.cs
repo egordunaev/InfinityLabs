@@ -32,6 +32,10 @@ public class Room : MonoBehaviour
         child = selectedRoom;
         return selectedRoom;
     }
+    public void OnTriggerEntry(Collision collision)
+    {
+        Debug.Log("Hit!");
+    }
 }
 
 public enum RoomType

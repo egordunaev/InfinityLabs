@@ -2063,6 +2063,7 @@ GameObject:
   - component: {fileID: 231666429954212368}
   - component: {fileID: 2509975838490905342}
   - component: {fileID: 5850462405835046188}
+  - component: {fileID: 2284933281005742077}
   m_Layer: 0
   m_Name: DeadEndSmall
   m_TagString: Untagged
@@ -2121,6 +2122,19 @@ MonoBehaviour:
   parent: {fileID: 0}
   child: {fileID: 0}
   possibleConnectingRooms: []
+--- !u!65 &2284933281005742077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231666429954212383}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 3.983533, z: 5}
+  m_Center: {x: 5, y: 2.018928, z: 2.5127716}
 --- !u!1 &4532628220441760961
 GameObject:
   m_ObjectHideFlags: 0

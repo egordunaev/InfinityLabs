@@ -4376,6 +4376,7 @@ GameObject:
   - component: {fileID: 2461723710409462438}
   - component: {fileID: 7865780079247849678}
   - component: {fileID: 7612214064286007266}
+  - component: {fileID: 9134574754781063560}
   m_Layer: 0
   m_Name: StairsUp
   m_TagString: Untagged
@@ -4445,3 +4446,16 @@ MonoBehaviour:
   - {fileID: 2513749060889219583, guid: c093eb3e009b15b47ac761f09339e330, type: 3}
   - {fileID: 5713921677712197596, guid: 0214df62df4b4f443ab469b7c0695726, type: 3}
   - {fileID: 629916030998504275, guid: 7cfce42201a590346a294d696c8c8cca, type: 3}
+--- !u!65 &9134574754781063560
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2461723710409462437}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 9, z: 29.997555}
+  m_Center: {x: 5, y: 4.5, z: 15}

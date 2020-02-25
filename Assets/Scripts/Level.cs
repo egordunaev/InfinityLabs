@@ -39,10 +39,10 @@ public class Level : MonoBehaviour
                 if (parentRoom.possibleConnectingRooms.Length != 0)
                 {
                     temp = parentRoom.GetNextRoom(parentRoom);
-                    if (!RoomCollisionCheck(temp))
-                    {
+                    //if (!RoomCollisionCheck(temp))
+                    //{
                         forWhileLoop = false;
-                    }
+                    //}
                 }
                 
             }
@@ -67,12 +67,12 @@ public class Level : MonoBehaviour
     }
     bool RoomCollisionCheck(Room room)
     {
-        Debug.Log(room.ToString());
+        Debug.Log("this");
         if (room)
         {
             if (!room.collision.gameObject)
             {
-                Debug.Log(room.collision.ToString());
+                Debug.Log("");
                 return false;
             }
         }

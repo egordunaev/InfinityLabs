@@ -2799,6 +2799,7 @@ GameObject:
   - component: {fileID: 1026374705366399481}
   - component: {fileID: 4528064980348148699}
   - component: {fileID: 6949868347753589061}
+  - component: {fileID: 4890657500638697223}
   m_Layer: 0
   m_Name: TurnRight
   m_TagString: Untagged
@@ -2869,6 +2870,19 @@ MonoBehaviour:
   - {fileID: 629916030998504275, guid: 7cfce42201a590346a294d696c8c8cca, type: 3}
   - {fileID: 7612214064286007266, guid: 0ed228d19ab3d7049ab26dccc8da2db9, type: 3}
   - {fileID: 8948052611474971414, guid: 16305f1c94c23d0499b51274fbea0875, type: 3}
+--- !u!65 &4890657500638697223
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026374705366399480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.06525, y: 4, z: 20.014238}
+  m_Center: {x: -1.8652096, y: 2, z: 10.786519}
 --- !u!1 &1026374705567827327
 GameObject:
   m_ObjectHideFlags: 0

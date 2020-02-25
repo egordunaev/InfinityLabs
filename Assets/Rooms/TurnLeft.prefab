@@ -1041,6 +1041,7 @@ GameObject:
   - component: {fileID: 2818451994754330332}
   - component: {fileID: 942292366858317139}
   - component: {fileID: 2513749060889219583}
+  - component: {fileID: 2591013389462945811}
   m_Layer: 0
   m_Name: TurnLeft
   m_TagString: Untagged
@@ -1111,6 +1112,19 @@ MonoBehaviour:
   - {fileID: 629916030998504275, guid: 7cfce42201a590346a294d696c8c8cca, type: 3}
   - {fileID: 7612214064286007266, guid: 0ed228d19ab3d7049ab26dccc8da2db9, type: 3}
   - {fileID: 8948052611474971414, guid: 16305f1c94c23d0499b51274fbea0875, type: 3}
+--- !u!65 &2591013389462945811
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577346571785159008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.032036, y: 4, z: 20.026848}
+  m_Center: {x: -0.53762054, y: 2, z: 11.308512}
 --- !u!1 &796425999997389685
 GameObject:
   m_ObjectHideFlags: 0
