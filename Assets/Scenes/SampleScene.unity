@@ -512,8 +512,17 @@ MonoBehaviour:
   - {fileID: 5701201983207407973, guid: 63706672102b395449170b6219b472f5, type: 3}
   endRoom:
   - {fileID: 1321418982431134565, guid: 068247b5a91e03442b128a41a398b242, type: 3}
-  possibleRooms: []
+  possibleRooms:
+  - {fileID: 6949868347753589061, guid: 73e8026b2ef83444fb521ebcc2b87a40, type: 3}
+  - {fileID: 2513749060889219583, guid: c093eb3e009b15b47ac761f09339e330, type: 3}
+  - {fileID: 5713921677712197596, guid: 0214df62df4b4f443ab469b7c0695726, type: 3}
+  - {fileID: 629916030998504275, guid: 7cfce42201a590346a294d696c8c8cca, type: 3}
+  - {fileID: 7612214064286007266, guid: 0ed228d19ab3d7049ab26dccc8da2db9, type: 3}
+  - {fileID: 8948052611474971414, guid: 16305f1c94c23d0499b51274fbea0875, type: 3}
+  - {fileID: 1546772415139459131, guid: 3e2db2877e5b35f4d8e7798893c63b87, type: 3}
+  - {fileID: 5850462405835046188, guid: 6f769ef32e954f2428fbd0a01a7e227f, type: 3}
   MaximumRooms: 20
+  leftEndPoints: []
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +752,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823481989}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -755,7 +764,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823481989}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -9,6 +10,7 @@ public class Level : MonoBehaviour
     private System.Random random = new System.Random();
     private Room currentRoom, parentRoom;
     private int roomIndex;
+    public List<Transform> leftEndPoints;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class Level : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     void Awake()
     {
@@ -26,10 +28,11 @@ public class Level : MonoBehaviour
     }
     void GenerateLevel()
     {
+        roomIndex = 0;
         PlaceRoom(startRoom[0]);
         Room temp = null;
         parentRoom = currentRoom;
-        for (int item = 0; item <= MaximumRooms; item++)
+        for (int item = 1; item <= MaximumRooms; item++)
         {
             roomIndex = item;
             bool forWhileLoop = true;
@@ -49,8 +52,10 @@ public class Level : MonoBehaviour
             PlaceRoom(temp);
             parentRoom = currentRoom;
         }
+        roomIndex++;
         PlaceRoom(endRoom[0]);
-
+        Debug.Log("There are " + leftEndPoints.ToArray().Length + " exits remaining");
+        PlaceRest();
     }
     void PlaceRoom(Room room)
     {
@@ -60,23 +65,49 @@ public class Level : MonoBehaviour
         if (parentRoom)
         {
             var point = parentRoom.endPoint[random.Next(0, parentRoom.endPoint.Length)]; // picking random exit point
+            if (parentRoom.endPoint.Length > 1)
+            {
+                leftEndPoints.AddRange(parentRoom.endPoint.Where(x => (x != point)).ToArray());
+                MaximumRooms -= parentRoom.endPoint.Where(x => (x != point)).ToArray().Length;
+            }
             currentRoom.transform.forward = point.forward;
             currentRoom.transform.position += point.position - currentRoom.startPoint.position;
         }
 
     }
+    void PlaceRest()
+    {
+        while (leftEndPoints.ToArray().Length != 0)
+        {
+            foreach (var endPoint in leftEndPoints.ToList())
+            {
+                
+                roomIndex++;
+                Room tempRoom = null;
+                //add collision check
+                tempRoom = Instantiate(possibleRooms[random.Next(0, possibleRooms.Length)]) as Room;
+                tempRoom.gameObject.name = "Room_" + roomIndex + "_" + tempRoom.roomType;
+                tempRoom.transform.parent = transform;
+                tempRoom.transform.forward = endPoint.forward;
+                tempRoom.transform.position += endPoint.position - tempRoom.startPoint.position;
+                //add collision check
+                if (tempRoom.roomType == RoomType.RoomDeadEnd)
+                {
+                    leftEndPoints.Remove(endPoint);
+                }
+                else
+                {
+                    leftEndPoints.AddRange(tempRoom.endPoint);
+                    leftEndPoints.Remove(endPoint);
+                }
+            }
+            Debug.Log("There are " + leftEndPoints.ToArray().Length + " exits remaining");
+        }
+    }
     bool RoomCollisionCheck(Room room)
     {
-        Debug.Log("this");
-        if (room)
-        {
-            if (!room.collision.gameObject)
-            {
-                Debug.Log("");
-                return false;
-            }
-        }
-        
-        return true;
+        Collider[] colliders = Physics.OverlapBox(room.transform.position, room.transform.localScale);
+        if(colliders.Length != 0) { }
+        return false;
     }
 }

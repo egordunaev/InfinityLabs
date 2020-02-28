@@ -16009,7 +16009,7 @@ GameObject:
   - component: {fileID: 6448045155981342711}
   m_Layer: 0
   m_Name: StartRoom
-  m_TagString: Respawn
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
