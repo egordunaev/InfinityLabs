@@ -11,7 +11,7 @@ public class Room : MonoBehaviour
     public Transform[] endPoint;
     public Room parent, child = null; // to know info about previous and next rooms, null by default
     public Room[] possibleConnectingRooms;
-
+    public Transform playerSpawnPoint;
     private System.Random random = new System.Random();
     public Collision collision;
     // Start is called before the first frame update

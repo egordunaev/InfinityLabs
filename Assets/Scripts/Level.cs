@@ -11,6 +11,7 @@ public class Level : MonoBehaviour
     private System.Random random = new System.Random();
     private Room currentRoom, parentRoom;
     private int roomIndex;
+    public Player player;
     public List<Transform> leftEndPoints;
     private bool isGenerated = false;
     // Start is called before the first frame update
@@ -27,6 +28,10 @@ public class Level : MonoBehaviour
     void Awake()
     {
         GenerateLevel();
+        if (isGenerated)
+        {
+            SpawnPlayer();
+        }
     }
     void GenerateLevel()
     {
@@ -127,5 +132,13 @@ public class Level : MonoBehaviour
     {
         Gizmos.color = new Color32(120, 255, 20, 170);
         Gizmos.DrawCube(transform.position, transform.localScale);
+    }
+    void SpawnPlayer()
+    {
+        player = Instantiate(player) as Player;
+        player.gameObject.name = "Player";
+        player.transform.parent = transform;
+        player.transform.forward = startRoom.playerSpawnPoint.forward;
+        player.transform.position += startRoom.playerSpawnPoint.position;
     }
 }
