@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    public Room[] startRoom, endRoom, possibleRooms;
+    public Room startRoom, endRoom;
+    public Room[] possibleRooms, deadEnds;
     public int MaximumRooms = 5;
     private System.Random random = new System.Random();
     private Room currentRoom, parentRoom;
     private int roomIndex;
     public List<Transform> leftEndPoints;
+    private bool isGenerated = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +30,13 @@ public class Level : MonoBehaviour
     }
     void GenerateLevel()
     {
+        Debug.Log("Status:" + isGenerated.ToString());
         roomIndex = 0;
-        PlaceRoom(startRoom[0]);
+        PlaceRoom(startRoom);
         Room temp = null;
         parentRoom = currentRoom;
-        for (int item = 1; item <= MaximumRooms; item++)
+        while(roomIndex <= MaximumRooms)
         {
-            roomIndex = item;
             bool forWhileLoop = true;
             while (forWhileLoop)
             {
@@ -44,18 +46,22 @@ public class Level : MonoBehaviour
                     temp = parentRoom.GetNextRoom(parentRoom);
                     //if (!RoomCollisionCheck(temp))
                     //{
-                        forWhileLoop = false;
+                    forWhileLoop = false;
                     //}
                 }
-                
+
             }
             PlaceRoom(temp);
             parentRoom = currentRoom;
+            roomIndex++;
+            PlaceRest(possibleRooms);
         }
         roomIndex++;
-        PlaceRoom(endRoom[0]);
+        PlaceRoom(endRoom);
         Debug.Log("There are " + leftEndPoints.ToArray().Length + " exits remaining");
-        PlaceRest();
+        PlaceRest(deadEnds);
+        isGenerated = true;
+        Debug.Log("Status:" + isGenerated.ToString());
     }
     void PlaceRoom(Room room)
     {
@@ -68,14 +74,15 @@ public class Level : MonoBehaviour
             if (parentRoom.endPoint.Length > 1)
             {
                 leftEndPoints.AddRange(parentRoom.endPoint.Where(x => (x != point)).ToArray());
-                MaximumRooms -= parentRoom.endPoint.Where(x => (x != point)).ToArray().Length;
+                //MaximumRooms -= parentRoom.endPoint.Where(x => (x != point)).ToArray().Length;
             }
             currentRoom.transform.forward = point.forward;
             currentRoom.transform.position += point.position - currentRoom.startPoint.position;
+            RoomCollisionCheck(currentRoom);
         }
 
     }
-    void PlaceRest()
+    void PlaceRest(Room[] rooms)
     {
         while (leftEndPoints.ToArray().Length != 0)
         {
@@ -85,11 +92,12 @@ public class Level : MonoBehaviour
                 roomIndex++;
                 Room tempRoom = null;
                 //add collision check
-                tempRoom = Instantiate(possibleRooms[random.Next(0, possibleRooms.Length)]) as Room;
+                tempRoom = Instantiate(rooms[random.Next(0, rooms.Length)]) as Room;
                 tempRoom.gameObject.name = "Room_" + roomIndex + "_" + tempRoom.roomType;
                 tempRoom.transform.parent = transform;
                 tempRoom.transform.forward = endPoint.forward;
                 tempRoom.transform.position += endPoint.position - tempRoom.startPoint.position;
+                RoomCollisionCheck(tempRoom);
                 //add collision check
                 if (tempRoom.roomType == RoomType.RoomDeadEnd)
                 {
@@ -107,7 +115,17 @@ public class Level : MonoBehaviour
     bool RoomCollisionCheck(Room room)
     {
         Collider[] colliders = Physics.OverlapBox(room.transform.position, room.transform.localScale);
-        if(colliders.Length != 0) { }
+
+        if (colliders.Length != 0)
+        {
+            Debug.Log("Collision");
+            return true;
+        }
         return false;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color32(120, 255, 20, 170);
+        Gizmos.DrawCube(transform.position, transform.localScale);
     }
 }
