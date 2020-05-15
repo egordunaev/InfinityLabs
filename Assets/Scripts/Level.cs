@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Level : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Level : MonoBehaviour
     public Player player;
     public List<Transform> leftEndPoints;
     private bool isGenerated = false;
+    public NavMeshSurface navigationSurface;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class Level : MonoBehaviour
     void Awake()
     {
         GenerateLevel();
+        navigationSurface.BuildNavMesh();
         if (isGenerated)
         {
             SpawnPlayer();
