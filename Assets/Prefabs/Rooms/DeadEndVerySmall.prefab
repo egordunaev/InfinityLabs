@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6cd1fdc7c0729ac439f72a8536a7cd1b, type: 2}
+  - {fileID: 2100000, guid: 97c778629b6490e48a8d8f5b02158ce4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -313,7 +313,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6cd1fdc7c0729ac439f72a8536a7cd1b, type: 2}
+  - {fileID: 2100000, guid: 97c778629b6490e48a8d8f5b02158ce4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -759,6 +759,7 @@ MonoBehaviour:
   parent: {fileID: 0}
   child: {fileID: 0}
   possibleConnectingRooms: []
+  playerSpawnPoint: {fileID: 0}
 --- !u!1 &6008030329968555001
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +850,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6cd1fdc7c0729ac439f72a8536a7cd1b, type: 2}
+  - {fileID: 2100000, guid: 97c778629b6490e48a8d8f5b02158ce4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
