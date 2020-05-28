@@ -8,6 +8,7 @@ public class Level : MonoBehaviour
 {
     public Room startRoom, endRoom;
     public Room[] possibleRooms, deadEnds;
+    private List<Room> levelRooms = new List<Room>();
     public int MaximumRooms = 5;
     private System.Random random = new System.Random();
     private Room currentRoom, parentRoom;
@@ -31,9 +32,17 @@ public class Level : MonoBehaviour
     {
         GenerateLevel();
         navigationSurface.BuildNavMesh();
+        ActivateSpawners(levelRooms);
         if (isGenerated)
         {
             SpawnPlayer();
+        }
+    }
+    void ActivateSpawners(List<Room> rooms)
+    {
+        foreach(var room in rooms)
+        {
+            room.TurnOnSpawners();
         }
     }
     void GenerateLevel()
@@ -88,7 +97,7 @@ public class Level : MonoBehaviour
             currentRoom.transform.position += point.position - currentRoom.startPoint.position;
             RoomCollisionCheck(currentRoom);
         }
-
+        levelRooms.Add(currentRoom);
     }
     void PlaceRest(Room[] rooms)
     {

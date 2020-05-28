@@ -14,6 +14,7 @@ public class Room : MonoBehaviour
     public Transform playerSpawnPoint;
     private System.Random random = new System.Random();
     public Collision collision;
+    public SpawnArea[] spawns;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,16 @@ public class Room : MonoBehaviour
         selectedRoom.parent = this;
         child = selectedRoom;
         return selectedRoom;
+    }
+    public void TurnOnSpawners()
+    {
+        if (spawns.Length > 0)
+        {
+            foreach(var spawnArea in spawns)
+            {
+                spawnArea.SpawnItems();
+            }
+        }
     }
 }
 

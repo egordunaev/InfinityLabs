@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 688739828875701034}
   - component: {fileID: 688739828875701032}
   - component: {fileID: 688739828875701033}
+  - component: {fileID: 7926041655255514565}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -231,6 +232,22 @@ MonoBehaviour:
   useVolumetric: 1
   featuresFoldout: 1
   showAdditionalSettings: 0
+--- !u!114 &7926041655255514565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688739828875701035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84275485aca490649ac545b97032a1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFlickering: 0
+  flickerChance: 1.1
+  randomIntensity: 1
+  maxIntensity: 600
 --- !u!1 &7422075459300852009
 GameObject:
   m_ObjectHideFlags: 0

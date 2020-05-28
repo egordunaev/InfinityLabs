@@ -8,13 +8,19 @@ public class Enemy : MonoBehaviour
     private Animator enemyAnimator;
     public NavMeshAgent meshAgent;
     public float attackDistance;
-    public Player player;
+    public GameObject player;
     public float viewDistance;
-    public Collider hearing;
+    public float health = 100f;
 
     // Update is called once per frame
     void Update()
     {
+        if(health <= 0f)
+        {
+            meshAgent.isStopped = true;
+            EnemyStateControl("Dead");
+            return;
+        }
         meshAgent.isStopped = false;
         float distance = Vector3.Distance(transform.position, player.transform.position);
         //Debug.Log("Distance: " + distance);
@@ -31,6 +37,7 @@ public class Enemy : MonoBehaviour
     }
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         enemyAnimator = GetComponent<Animator>();
         EnemyStateControl("IdleState");
         
