@@ -9,6 +9,9 @@ TagManager:
   - SoundSource
   - SoundSourceLoud
   - Room
+  - PlayerModel
+  - Prop
+  - SpawnArea
   layers:
   - Default
   - TransparentFX

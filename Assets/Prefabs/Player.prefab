@@ -573,6 +573,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da98826ecbaa6f4488b92dfe1cb353d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  threatLevel: 0
 --- !u!1 &4798316342892754689
 GameObject:
   m_ObjectHideFlags: 0
@@ -15882,6 +15884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da98826ecbaa6f4488b92dfe1cb353d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  threatLevel: 0
 --- !u!1 &5435646338862172958
 GameObject:
   m_ObjectHideFlags: 0
@@ -51662,6 +51666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 30c4cf803d0eb1842849898391eb52fd,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerModel
       objectReference: {fileID: 0}
     - target: {fileID: -819139046232449951, guid: 30c4cf803d0eb1842849898391eb52fd,
         type: 3}

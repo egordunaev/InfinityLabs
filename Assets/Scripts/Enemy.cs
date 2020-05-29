@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     private Animator enemyAnimator;
     public NavMeshAgent meshAgent;
     public float attackDistance;
-    public GameObject player;
+    public Player player;
     public float viewDistance;
     public float health = 100f;
 
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
     }
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("PlayerModel").GetComponent<Player>();
         enemyAnimator = GetComponent<Animator>();
         EnemyStateControl("IdleState");
         

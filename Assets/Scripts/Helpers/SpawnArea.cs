@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class SpawnArea : MonoBehaviour
 {
+    public AreaType areaType;
+    public bool spawnOnStart;
     public bool spawnAll = false; //check this if you want wo spawn all gameobjects in this area
     public int amountOfItems = 1; // number of items to spawn, default is 1
     public bool spawnInRandom = true; // spawns random items, uses 'Amount Of Items'
@@ -46,4 +48,16 @@ public class SpawnArea : MonoBehaviour
         float spawnPointZ = Random.Range(area.bounds.min.z, area.bounds.max.z);
         return new Vector3(spawnPointX, 2, spawnPointZ);
     }
+    void Start()
+    {
+        if (spawnOnStart)
+        {
+            SpawnItems();
+        }
+    }
+}
+public enum AreaType
+{
+    PropArea,
+    EnemySpawner
 }

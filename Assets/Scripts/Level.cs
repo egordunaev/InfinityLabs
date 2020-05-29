@@ -16,6 +16,7 @@ public class Level : MonoBehaviour
     public Player player;
     public List<Transform> leftEndPoints;
     private bool isGenerated = false;
+    private SpawnManager spawnManager;
     public NavMeshSurface navigationSurface;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,8 @@ public class Level : MonoBehaviour
     {
         GenerateLevel();
         navigationSurface.BuildNavMesh();
+        //spawnManager = GetComponent<SpawnManager>();
+        //spawnManager.GetLevelSpawners();
         ActivateSpawners(levelRooms);
         if (isGenerated)
         {

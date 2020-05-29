@@ -226,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 818436069}
   - component: {fileID: 818436070}
+  - component: {fileID: 818436068}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -233,6 +234,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &818436068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818436067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a683218cae10a34e91ebc90b054a260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &818436069
 Transform:
   m_ObjectHideFlags: 0
@@ -336,6 +349,6 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.13666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}

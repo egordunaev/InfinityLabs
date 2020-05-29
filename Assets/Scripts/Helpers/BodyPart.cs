@@ -26,7 +26,7 @@ public class BodyPart : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
-        if (col)
+        if (col != null)
         {
             Debug.Log("Collision detected on " + gameObject + ". Collides with: " + col.gameObject.name+". Tag: "+col.tag);
             enemy.health = enemy.health - damage;
