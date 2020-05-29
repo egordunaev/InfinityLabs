@@ -26,9 +26,12 @@ public class Door : MonoBehaviour
     {
         if(!isOpen)
         {
-            Debug.Log("Entered: " + col.gameObject.tag);
-            isOpen = true;
-            DoorControl("Open");
+            if (col.gameObject.tag == "PlayerModel" || col.gameObject.tag == "Enemy")
+            {
+                isOpen = true;
+                DoorControl("Open");
+            }
+            
         }
     }
     void OnTriggerExit(Collider col)
