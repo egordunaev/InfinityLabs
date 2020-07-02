@@ -122,7 +122,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 7850
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 1.1533e-41, w: 4.0974e-41}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 2.18
   m_ShadowAngle: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_ShadowVariant: 0
   m_ShadowPrecision: 0
   useOldInspector: 0
-  useVolumetric: 1
+  useVolumetric: 0
   featuresFoldout: 1
   showAdditionalSettings: 0
 --- !u!114 &7926041655255514565

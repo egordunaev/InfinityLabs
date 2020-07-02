@@ -550,7 +550,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.32224688, b: 0, a: 1}
-  m_Intensity: 47.746483
+  m_Intensity: 4.6393666
   m_Range: 13.95359
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 600
+  m_Intensity: 58.3
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -760,6 +760,7 @@ MonoBehaviour:
   child: {fileID: 0}
   possibleConnectingRooms: []
   playerSpawnPoint: {fileID: 0}
+  spawns: []
 --- !u!1 &6008030329968555001
 GameObject:
   m_ObjectHideFlags: 0

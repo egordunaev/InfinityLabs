@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2024341843116135575}
   - component: {fileID: 2024341843116135576}
   - component: {fileID: 2024341843116135577}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SpawnArea
   m_TagString: SpawnArea
   m_Icon: {fileID: 0}
@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10cd2e764f0267546805144515b6613e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  areaType: 0
   spawnOnStart: 0
   spawnAll: 0
   amountOfItems: 1

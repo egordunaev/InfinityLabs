@@ -52,4 +52,8 @@ public class Enemy : MonoBehaviour
         EnemyStateControl("Attack");
         
     }
+    void OnAnimatorMove()
+    {
+        meshAgent.speed = (enemyAnimator.deltaPosition / Time.deltaTime).magnitude;
+    }
 }

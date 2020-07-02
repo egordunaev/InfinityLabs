@@ -288,7 +288,7 @@ MonoBehaviour:
   deadEnds:
   - {fileID: 5850462405835046188, guid: 6f769ef32e954f2428fbd0a01a7e227f, type: 3}
   - {fileID: 1546772415139459131, guid: 3e2db2877e5b35f4d8e7798893c63b87, type: 3}
-  MaximumRooms: 5
+  MaximumRooms: 3
   player: {fileID: 6934965665971502357, guid: 0c2171bef53239b429f4dadbd528c45a, type: 3}
   leftEndPoints: []
   navigationSurface: {fileID: 2000958188}

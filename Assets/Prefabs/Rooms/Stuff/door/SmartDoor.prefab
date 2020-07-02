@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 779684216899136169}
   - component: {fileID: 779684216899136168}
   - component: {fileID: 779684216899136170}
-  m_Layer: 12
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 779684216999054114}
   - component: {fileID: 779684216999054113}
   - component: {fileID: 779684216999054115}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SmartDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

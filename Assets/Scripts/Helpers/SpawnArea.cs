@@ -46,7 +46,7 @@ public class SpawnArea : MonoBehaviour
     {
         float spawnPointX = Random.Range(area.bounds.min.x, area.bounds.max.x);
         float spawnPointZ = Random.Range(area.bounds.min.z, area.bounds.max.z);
-        return new Vector3(spawnPointX, 2, spawnPointZ);
+        return new Vector3(spawnPointX, 1.5f, spawnPointZ);
     }
     void Start()
     {
